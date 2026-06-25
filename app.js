@@ -41,6 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
       }
 
+      // Update instructions dynamically
+      const instructions = card.getAttribute('data-instructions') || "Click the green flag inside the game screen to start playing! Use your keyboard arrow keys or mouse to control the game controls.";
+      const instructionsContainer = modal.querySelector('.modal-instructions p');
+      if (instructionsContainer) {
+        instructionsContainer.textContent = instructions;
+      }
+
       // Show modal
       modal.classList.add('active');
       document.body.style.overflow = 'hidden'; // Prevent main page scrolling

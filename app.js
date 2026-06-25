@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('play-modal');
   const modalTitle = modal.querySelector('.modal-title');
   const iframeWrapper = modal.querySelector('.game-iframe-wrapper');
+  const linkWrapper = modal.querySelector('.scratch-link-wrapper');
   const closeBtn = modal.querySelector('.modal-close');
   const playButtons = document.querySelectorAll('.play-btn');
 
@@ -32,6 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
         </iframe>
       `;
 
+      if (linkWrapper) {
+        linkWrapper.innerHTML = `
+          <a class="scratch-link" href="https://scratch.mit.edu/projects/${scratchId}" target="_blank" rel="noopener">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open this project on the Scratch website
+          </a>
+        `;
+      }
+
       // Show modal
       modal.classList.add('active');
       document.body.style.overflow = 'hidden'; // Prevent main page scrolling
@@ -46,6 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Crucial: Clear iframe so the game sound stops playing in the background!
     setTimeout(() => {
       iframeWrapper.innerHTML = '';
+      if (linkWrapper) {
+        linkWrapper.innerHTML = '';
+      }
     }, 300); // Wait for transition to finish
   };
 

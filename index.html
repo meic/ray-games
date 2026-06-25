@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Page Metadata -->
+  <title>Ray Games | My Scratch Games Portfolio</title>
+  <meta name="description" content="Welcome to Ray Games! Check out the fun interactive Scratch games created by Ray, including Neon Runner, Galaxy Defender, and Mystery Maze. Play them directly in your browser.">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <div class="logo-container">
+        <i class="fa-solid fa-gamepad logo-icon"></i>
+      </div>
+      <h1>Ray Games</h1>
+      <p>Welcome to my game development portfolio! Here are some of the cool Scratch games I have built. Click any game to play it right here in your browser!</p>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <!-- Background glowing effect elements can be added or controlled via JS -->
+    </div>
+  </section>
+
+  <!-- Games Section -->
+  <section class="games-section">
+    <div class="container">
+      <h2 class="section-title">
+        <i class="fa-solid fa-star"></i> Featured Games
+      </h2>
+      
+      <div class="games-grid">
+        <!-- Game Card 1: Neon Runner -->
+        <div class="game-card" data-scratch-id="10128431">
+          <div class="game-thumbnail-container">
+            <img class="game-thumbnail" src="img/neon_runner.png" alt="Neon Runner game art">
+          </div>
+          <div class="game-content">
+            <div class="game-tags">
+              <span class="game-tag primary">Arcade</span>
+              <span class="game-tag secondary">Runner</span>
+            </div>
+            <h3>Neon Runner</h3>
+            <p>Guide the neon ball through a fast-paced futuristic obstacle course. Dodge red obstacles, pick up score multipliers, and reach the finish line as fast as you can!</p>
+            <button class="btn btn-primary play-btn" id="play-neon-runner">
+              <i class="fa-solid fa-play"></i> Play Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Game Card 2: Galaxy Defender -->
+        <div class="game-card" data-scratch-id="10128431">
+          <div class="game-thumbnail-container">
+            <img class="game-thumbnail" src="img/galaxy_defender.png" alt="Galaxy Defender game art">
+          </div>
+          <div class="game-content">
+            <div class="game-tags">
+              <span class="game-tag primary">Space Shooter</span>
+              <span class="game-tag secondary">Action</span>
+            </div>
+            <h3>Galaxy Defender</h3>
+            <p>Dodge asteroid belts and fight waves of incoming alien spaceships! Collect laser upgrades and shield power-ups to beat your highest score and protect the galaxy.</p>
+            <button class="btn btn-primary play-btn" id="play-galaxy-defender">
+              <i class="fa-solid fa-play"></i> Play Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Game Card 3: Mystery Maze -->
+        <div class="game-card" data-scratch-id="10128431">
+          <div class="game-thumbnail-container">
+            <img class="game-thumbnail" src="img/mystery_maze.png" alt="Mystery Maze game art">
+          </div>
+          <div class="game-content">
+            <div class="game-tags">
+              <span class="game-tag primary">Puzzle</span>
+              <span class="game-tag secondary">Adventure</span>
+            </div>
+            <h3>Mystery Maze</h3>
+            <p>Explore a dark, medieval dungeon map. Search for hidden keys, avoid fire traps and spikes, and find the golden treasure chest to escape the maze!</p>
+            <button class="btn btn-primary play-btn" id="play-mystery-maze">
+              <i class="fa-solid fa-play"></i> Play Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for Playing Game -->
+  <div class="modal" id="play-modal" aria-hidden="true" role="dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Playing Game</h3>
+        <button class="modal-close" aria-label="Close modal" id="modal-close-btn">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="game-iframe-wrapper">
+          <!-- Scratch iframe loaded dynamically by JS -->
+        </div>
+        <div class="modal-instructions">
+          <h4><i class="fa-solid fa-circle-info"></i> How to Play</h4>
+          <p>Click the green flag inside the game screen to start playing! Use your keyboard arrow keys or mouse to control the game controls.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Ray Games. Made with ❤️ by Ray & Dad.</p>
+      <p>Hosted on <a href="https://pages.cloudflare.com/" target="_blank" rel="noopener">Cloudflare Pages</a>.</p>
+    </div>
+  </footer>
+
+  <!-- Custom Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>

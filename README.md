@@ -65,3 +65,24 @@ Since this is a standard static website, hosting it on Cloudflare Pages is compl
    - **Build output directory**: (Leave blank or enter `/`)
 6. Click **Save and Deploy**.
 7. Once deployed, add your custom domain under the **Custom domains** tab in Cloudflare Pages. Cloudflare will automatically handle the SSL certificate!
+
+## Farm Empire
+
+Farm Empire is a standalone HTML/CSS/JavaScript game at `/farm-empire/`.
+The root `_redirects` file redirects `/farm-empire` to `/farm-empire/` so its
+relative scripts and stylesheet resolve inside the game directory.
+
+The connected Cloudflare build uses Workers Static Assets and runs
+`npx wrangler versions upload`. The root `wrangler.jsonc` names the existing
+`ray-games` Worker and declares the repository root as its assets directory.
+No build command or application dependencies are needed. `.assetsignore`
+excludes repository metadata, tests, documentation, and local tooling from
+the uploaded assets. Keep `_redirects` included so the game URL redirect works.
+Merge the game branch into the configured production branch to publish through
+the existing integration. This repository defaults to `main`. The Pages setup
+above is an alternative hosting option, not the current Workers build setup.
+
+Game source and gameplay notes are in `farm-empire/`. Run its regression suite
+with `node tests/farm-empire.cjs` (Node.js, no npm install required).
+Saves are stored in the player's browser on the current origin; saves from a
+localhost preview or another domain do not transfer automatically.
